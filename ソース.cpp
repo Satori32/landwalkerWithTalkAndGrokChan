@@ -67,6 +67,18 @@ int key() {
 //what are you doing?
 //we need next step.
 
+// for fusers.
+// we have struct on c++ spec.
+// so multi handling is easy.
+// for fusers.
+
+//soso.this is land walking code.
+//not use sarface. so freeride.
+//end of the world.
+//enjoy.
+
+// //soso. are you remenber the your own risk.
+
 const int width = 10;
 const int height = 10;
 
@@ -119,13 +131,13 @@ void move() {
 
 void character(char C) {
 	// Display a character at the current position
-	std::cout << "\033[2J\033[1;1H"; // Clear the console and move cursor to top-left
+//	std::cout << "\033[2J\033[1;1H"; // Clear the console and move cursor to top-left
 	//std::cout << "\033[<" << y << ">; <" << x << ">H"; // Move cursor to (x, y)
 	//std::cout.flush();
 	//std::cout << /*"Character at (" << x << ", " << y << "): " <<*/ C << std::endl;
 	//std::cout.flush();
 
-	std::cout <<"\033[<"<<y+1<<">; <"<<x+1<<">H" << std::endl;
+	std::cout <<"\033["<<y+1<<";"<<x+2<<"H" << std::endl;
 	std::cout << C << std::endl;
 	//std::cout.flush();
 	std::cout << "\033[1;1H"; // Move cursor to the top-left corner
@@ -135,19 +147,20 @@ void character(char C) {
 
 void clearScreen() {
 	// Clear the console screen
-	std::cout << "\033[2J\033[1;1H"; // Clear the console and move cursor to top-left
+	std::cout << "\033[2J \033[1;1H"; // Clear the console and move cursor to top-left
 	//std::cout.flush();
 }
 
 void display(char C) {
 
 	//clear the console screen
-	std::cout << "\033[2J\033[1;1H"; // Clear the console and move cursor to top-left
+	std::cout << "\033[2J \033[1;1H"; // Clear the console and move cursor to top-left
 
 	// Display the current values of x and y
 	for(int i = 0; i < width; ++i) {
 		std::cout << C;
 	}
+	std::cout << C;
 	std::cout << std::endl;
 	for(int j = 0; j < height; ++j) {
 		std::cout << C;
@@ -167,6 +180,7 @@ void display(char C) {
 	for(int i = 0; i < width; ++i) {
 		std::cout << C;
 	}
+	std::cout << C;
 
 	std::cout << std::endl;
 
@@ -231,7 +245,7 @@ int main() {
 		std::cout << "x:" << x << ", y:" << y << std::endl;
 		move(); // Move based on key input
 		clamp(); // Clamp x and y to the boundaries
-		character('Y'); // Display a character at the current position
+		character('A'); // Display a character at the current position
 	} while (!isquit());
 	return 0;
 }	
